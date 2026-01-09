@@ -1,0 +1,23 @@
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.100.128:3333/vue_boot_login
+    username: root # 替换为你的MySQL用户名
+    password: root # 替换为你的MySQL密码
+  # 参数校验配置
+  validation:
+    enable: true
+
+# MyBatis配置（如果用MyBatis Plus可省略）
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.entity
+  configuration:
+    map-underscore-to-camel-case: true # 下划线转驼峰
+
+# 端口配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api # 接口统一前缀
